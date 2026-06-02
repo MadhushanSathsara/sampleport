@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b1220;
+  color:white;
+}
+
+/* PAGE */
+.experience-page{
+  min-height:100vh;
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* TITLE */
+.exp-title{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:60px;
+  background:linear-gradient(90deg,#fff,#38bdf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+/* vertical line */
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:2px;
+  height:100%;
+  background:rgba(56,189,248,0.3);
+}
+
+/* CARD */
+.exp-card{
+  display:flex;
+  gap:20px;
+  width:50%;
+  padding:25px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  transition:.3s;
+  position:relative;
+}
+
+/* alternate sides */
+.exp-card:nth-child(odd){
+  align-self:flex-start;
+}
+
+.exp-card:nth-child(even){
+  align-self:flex-end;
+}
+
+/* hover */
+.exp-card:hover{
+  transform:translateY(-6px);
+  border-color:#38bdf8;
+}
+
+/* ICON */
+.exp-icon{
+  font-size:22px;
+  color:#38bdf8;
+  margin-top:5px;
+}
+
+/* CONTENT */
+.exp-content h2{
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+.exp-content h3{
+  color:#94a3b8;
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.exp-period{
+  font-size:14px;
+  color:#cbd5e1;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+/* DESCRIPTION */
+.exp-desc{
+  color:#cbd5e1;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+/* SKILLS */
+.exp-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.exp-skills span{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:20px;
+  background:rgba(56,189,248,0.1);
+  color:#38bdf8;
+  border:1px solid rgba(56,189,248,0.2);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .timeline::before{
+    left:10px;
+  }
+
+  .exp-card{
+    width:100%;
+    align-self:flex-start !important;
+    flex-direction:column;
+    margin-left:20px;
+  }
+
+  .exp-title{
+    font-size:32px;
+  }
+}

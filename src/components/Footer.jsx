@@ -30,7 +30,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2024 Madushan Sathsara | All Rights Reserved.</p>
+        <p>© All Rights Reserved.</p>
       </div>
     </div>
   </footer>

@@ -7,7 +7,6 @@ import NavbarBrand from 'react-bootstrap/esm/NavbarBrand';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-
 function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,12 +34,20 @@ function NavBar() {
             <Nav.Link onClick={() => navigateAndScroll('project-section')}>Projects</Nav.Link>
             <Nav.Link onClick={() => navigateAndScroll('contact')}>Contact</Nav.Link>
             <NavDropdown title="More" id="basic-nav-dropdown">
-              <NavDropdown.Item onClick={() => navigateAndScroll('Education')}>Education</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigateAndScroll('Work Experience')}>Work Experience</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigateAndScroll('Other Details')}>Other Details</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigateAndScroll('news')}>News</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigateAndScroll('support')}>Support</NavDropdown.Item>
-            </NavDropdown>
+
+  <NavDropdown.Item onClick={() => navigate('/education')}>
+    Education
+  </NavDropdown.Item>
+
+  <NavDropdown.Item onClick={() => navigate('/experience')}>
+    Work Experience
+  </NavDropdown.Item>
+
+  <NavDropdown.Item onClick={() => navigate('/other')}>
+    Other Details
+  </NavDropdown.Item>
+
+</NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

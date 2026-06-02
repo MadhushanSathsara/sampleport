@@ -1,18 +1,18 @@
+
 import React from 'react';
 import './index.css';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaArrowRight
+} from 'react-icons/fa';
 
 import profilePic from '../../src/Assets/propic.jpg';
 import profilePic2 from '../../src/Assets/propic2.jpg';
-
-
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-
 
 import pro1 from '../../src/Assets/pro1.jpg';
 import pro2 from '../../src/Assets/pro2.jpg';
@@ -21,9 +21,8 @@ import pro4 from '../../src/Assets/pro4.jpg';
 import pro5 from '../../src/Assets/pro5.jpg';
 import pro6 from '../../src/Assets/pro6.jpg';
 
-
 function Home() {
-    const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     if (location.state && location.state.scrollTo) {
@@ -36,135 +35,130 @@ function Home() {
 
   const navigate = useNavigate();
 
-  const handleViewProject = (projectId) => {
-    navigate(`/project/${projectId}`);
-  };
+  const projects = [
+    { id: 1, image: pro1, title: 'E-Commerce Platform' },
+    { id: 2, image: pro2, title: 'Portfolio Website' },
+    { id: 3, image: pro3, title: 'Task Management App' },
+    { id: 4, image: pro4, title: 'Restaurant Website' },
+    { id: 5, image: pro5, title: 'Booking System' },
+    { id: 6, image: pro6, title: 'Dashboard UI' },
+  ];
 
   return (
-    <div>
-      
-      <div id="home-section" className="home-img">
-        <div className="page">
-          <h1 className="text">Hey, Welcome to my Portfolio</h1>
-          <p className="text-p">
-            I’m a web programmer <br />
-            Specializing in frontend & backend development using React, Bootstrap, PHP, and MySQL. <br />
-            I create responsive, user-friendly, and high-performance web applications. <br />
-            Let’s build something great together! 🚀
+    <div className="main-container">
+
+      {/* HERO SECTION */}
+      <section id="home-section" className="hero-section">
+
+        <div className="hero-left">
+
+          <span className="tag">FULL STACK DEVELOPER</span>
+
+          <h1>
+            Building Modern <br />
+            Digital Experiences
+          </h1>
+
+          <p>
+            I design and develop modern web applications using
+            React, JavaScript, PHP, Bootstrap, and MySQL.
+            Creating fast, responsive, and beautiful user experiences.
           </p>
-          <br></br>
-          <Link to="/contact" className="contact">Contact Me</Link>
-          {/* <div className='social-link'>
-            <box-icon type='logo' name='facebook-circle'></box-icon>
-            <box-icon type='logo' name='whatsapp-square'></box-icon>
-            <box-icon type='logo' name='instagram-alt'></box-icon>
-          </div> */}
+
+          <div className="hero-buttons">
+            <Link to="/contact" className="primary-btn">
+              Hire Me
+            </Link>
+
+            <a href="#project-section" className="secondary-btn">
+              View Work
+            </a>
+          </div>
+
+          <div className="social-icons">
+            <FaGithub />
+            <FaLinkedin />
+            <FaInstagram />
+          </div>
+
         </div>
-         
-        <div className="home-content">
-          <img src={profilePic} alt="Profile" className="pro-pic" />
+
+        <div className="hero-right">
+          <img src={profilePic} alt="profile" className="hero-image" />
         </div>
-      </div>
 
-     <div id="about-section" className="who-container">
-      
-  <div className="profile-pic-container">
-    <img src={profilePic2} alt="Profile" className="profile2m-pic" />
-  </div>
+      </section>
 
-  <div className="who-text">
-    <h1>Who am I?</h1>
-    <h2 className='h1m'>I’m a passionate Web Developer & Programmer</h2>
-    <p>
-      With expertise in frontend and backend development. <br />
-      I specialize in building responsive, user-friendly, and high-performance web applications using React, Bootstrap, PHP, and MySQL. <br />
-      With a keen eye for design and a problem-solving mindset, I strive to create seamless digital experiences.
-      Let’s innovate and build something amazing together!
-    </p>
-    <hr />
-  </div>
-</div>
+      {/* ABOUT SECTION */}
+      <section id="about-section" className="about-section">
 
-    
-      <div id="project-section" className="project-container">
-        <h1 className="project-title">Projects</h1>
-
-        <div className="project-grid">
-         
-          <Card className="project-card">
-            <Card.Img variant="top" src={pro1} className="card-img" />
-            <Card.Body>
-              <Card.Title>Project One</Card.Title>
-              <Card.Text>
-                A modern web application built using React and Bootstrap.
-              </Card.Text>
-              <Button variant="primary" onClick={() => handleViewProject(1)}>View Project</Button>
-            </Card.Body>
-          </Card>
-
-         
-          <Card className="project-card">
-            <Card.Img variant="top" src={pro2} className="card-img" />
-            <Card.Body>
-              <Card.Title>Project Two</Card.Title>
-              <Card.Text>
-                An interactive UI with dynamic features.
-              </Card.Text>
-              <Button variant="primary" onClick={() => handleViewProject(2)}>View Project</Button>
-            </Card.Body>
-          </Card>
-
-        
-          <Card className="project-card">
-            <Card.Img variant="top" src={pro3} className="card-img" />
-            <Card.Body>
-              <Card.Title>Project Three</Card.Title>
-              <Card.Text>
-                A fully responsive and optimized website.
-              </Card.Text>
-              <Button variant="primary" onClick={() => handleViewProject(3)}>View Project</Button>
-            </Card.Body>
-          </Card>
-
-         
-          <Card className="project-card">
-            <Card.Img variant="top" src={pro4} className="card-img" />
-            <Card.Body>
-              <Card.Title>Project Three</Card.Title>
-              <Card.Text>
-                A fully responsive and optimized website.
-              </Card.Text>
-              <Button variant="primary" onClick={() => handleViewProject(4)}>View Project</Button>
-            </Card.Body>
-          </Card>
-
-     
-          <Card className="project-card">
-            <Card.Img variant="top" src={pro5} className="card-img" />
-            <Card.Body>
-              <Card.Title>Project Three</Card.Title>
-              <Card.Text>
-                A fully responsive and optimized website.
-              </Card.Text>
-              <Button variant="primary" onClick={() => handleViewProject(5)}>View Project</Button>
-            </Card.Body>
-          </Card>
-
-        
-          <Card className="project-card">
-            <Card.Img variant="top" src={pro6} className="card-img" />
-            <Card.Body>
-              <Card.Title>Project Three</Card.Title>
-              <Card.Text>
-                A fully responsive and optimized website.
-              </Card.Text>
-              <Button variant="primary" onClick={() => handleViewProject(6)}>View Project</Button>
-            </Card.Body>
-          </Card>
+        <div className="about-image">
+          <img src={profilePic2} alt="about" />
         </div>
-      </div>
+
+        <div className="about-content">
+
+          <span className="tag">ABOUT ME</span>
+
+          <h2>
+            Passionate About Building
+            Creative Websites
+          </h2>
+
+          <p>
+            I specialize in frontend and backend development,
+            creating responsive and high-performance web applications.
+            My focus is delivering clean UI/UX with scalable architecture.
+          </p>
+
+          <div className="skills">
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>Bootstrap</span>
+            <span>PHP</span>
+            <span>MySQL</span>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* PROJECTS */}
+      <section id="project-section" className="projects-section">
+
+        <span className="tag">MY WORK</span>
+
+        <h2>Featured Projects</h2>
+
+        <div className="projects-grid">
+
+          {projects.map((project) => (
+            <div className="project-card" key={project.id}>
+
+              <img src={project.image} alt={project.title} />
+
+              <div className="project-overlay">
+
+                <h3>{project.title}</h3>
+
+                <button
+                  onClick={() => navigate(`/project/${project.id}`)}
+                >
+                  View Project <FaArrowRight />
+                </button>
+
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+
+      </section>
+
     </div>
   );
 }
 
 export default Home;
+

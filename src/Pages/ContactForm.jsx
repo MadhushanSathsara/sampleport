@@ -1,78 +1,101 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import './ContactForm.css';
 
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [submitted, setSubmitted ] = useState (false);
-  
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaGithub,
+  FaLinkedin,
+  FaInstagram
+} from 'react-icons/fa';
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-  };
-
+function Contact() {
   return (
-    <div className="contact-form-section" id="contact">
-      <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-group">
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            className="form-control"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+    <div className="contact-page" id="contact">
+
+      <div className="contact-container">
+
+        {/* LEFT SIDE */}
+
+        <div className="contact-info">
+
+          <span className="contact-tag">
+            CONTACT ME
+          </span>
+
+          <h1>
+            Let's Build Something Amazing Together
+          </h1>
+
+          <p>
+            Feel free to contact me for projects,
+            collaborations, or freelance opportunities.
+          </p>
+
+          <div className="info-box">
+            <FaEnvelope />
+            <span>yourmail@gmail.com</span>
+          </div>
+
+          <div className="info-box">
+            <FaPhoneAlt />
+            <span>+94 77 123 4567</span>
+          </div>
+
+          <div className="info-box">
+            <FaMapMarkerAlt />
+            <span>Sri Lanka</span>
+          </div>
+
+          <div className="contact-socials">
+            <FaGithub />
+            <FaLinkedin />
+            <FaInstagram />
+          </div>
+
         </div>
 
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            className="form-control"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+        {/* RIGHT SIDE */}
+
+        <div className="contact-form-box">
+
+          <form className="contact-form">
+
+            <div className="input-group">
+              <input type="text" required />
+              <label>Your Name</label>
+            </div>
+
+            <div className="input-group">
+              <input type="email" required />
+              <label>Email Address</label>
+            </div>
+
+            <div className="input-group">
+              <input type="text" required />
+              <label>Subject</label>
+            </div>
+
+            <div className="input-group">
+              <textarea rows="6" required></textarea>
+              <label>Your Message</label>
+            </div>
+
+            <button type="submit">
+              Send Message
+            </button>
+
+          </form>
+
         </div>
 
-        <div className="form-group">
-          <label>Message</label>
-          <textarea
-            name="message"
-            className="form-control"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-        </div>
+      </div>
 
-        <button type="submit" className="btn btn-primary submit-btn">
-          Submit
-        </button>
-        {submitted && (
-          <div className="success">Message submitted successfully!</div>
-        )}
-        
-      </form>
     </div>
   );
 }
 
-export default ContactForm;
+export default Contact;
+

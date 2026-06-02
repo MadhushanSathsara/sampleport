@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import ContactForm from './Pages/ContactForm';
 import ProjectOverview from './Pages/ProjectOverview';
 import ScrollToTop from './components/ScrollToTop';
+import Experience from './Pages/Experience';
+import Education from './Pages/Education';
+import OtherDetails from './Pages/OtherDetails';
 
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/contact" element={<ContactForm />} /> */}
           <Route path="/project/:id" element={<ProjectOverview/>} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/other" element={<OtherDetails />} />
         </Routes>
         <ContactForm/>
         <Footer />

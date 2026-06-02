@@ -60,8 +60,8 @@
  
 }
 .footer {
-  background-color: #232323;
-  color: white;
+  background-color: #f5f5f5;
+  color: rgb(0, 0, 0);
   padding: 50px 20px;
   text-align: center;
 }
@@ -87,7 +87,7 @@
 
 .footer-about p {
   font-size: 14px;
-  color: #bbb;
+  color: #1d1d1d;
 }
 
 .footer-contact h3,
@@ -99,7 +99,7 @@
 .footer-contact p,
 .footer-contact a {
   font-size: 14px;
-  color: #bbb;
+  color: #252525;
   text-decoration: none;
 }
 
@@ -131,7 +131,7 @@
 .footer-bottom {
   padding-top: 15px;
   font-size: 14px;
-  color: #888;
+  color: #222222;
 }
 .dropdown-menu {
   font-family: 'Poppins', sans-serif;
